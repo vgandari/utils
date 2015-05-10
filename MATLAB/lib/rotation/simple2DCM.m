@@ -12,7 +12,7 @@ function C = simple2DCM(lambda, theta)
 % Victor Gandarillas
 % gandarillasv@gmail.com
 % 
-% Last Updated: 20150430
+% Last Updated: 20150503
 % 
 % :TODO:
 % Uncomment error line
@@ -34,7 +34,7 @@ function C = simple2DCM(lambda, theta)
 fname='simple2DCM';
 % error([fname, ' has not been written']);
 % warning([fname, ' has not been verified']);
-warning([fname, ' has not been validated']);
+% warning([fname, ' has not been validated']);
 % warning(['Error messages for ', fname, ' have not been written']);
 % warning([fname, ' has not been properly commented']);
 
@@ -50,10 +50,10 @@ end
 % -------------------------------------------------------------------------
 
 % IDENTITY MATRIX
-U = eye(3, 3);
+I = eye(3, 3);
 
 % DIRECTION COSINE MATRIX (SOME TERMS DEPEND ON IDENTITY MATRIX)
-C = U*cos(theta) - U*crossop(lambda)*sin(theta) + ...
+C = I*cos(theta) - I*crossop(lambda)*sin(theta) + ...
     [lambda(1); lambda(2); lambda(3)]* ...
     [lambda(1), lambda(2), lambda(3)]* ...
     (1 - cos(theta));

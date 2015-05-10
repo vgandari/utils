@@ -1,9 +1,10 @@
+function projectpath(name, ver)
 % Sets path for project files
 % 
 % Victor Gandarillas
 % gandarillasv@gmail.com
 % 
-% Last Updated: 20150429
+% Last Updated: 20150504
 % 
 % :TODO:
 % Uncomment error line
@@ -22,12 +23,12 @@
 % -------------------------------------------------------------------------
 % !!! EDIT THESE LINES BEFORE EACH EDIT/SAVE/RUN !!!
 % -------------------------------------------------------------------------
-sname='projectpath';
-% error([sname, ' has not been written']);
-% warning([sname, ' has not been verified']);
-% warning([sname, ' has not been validated']);
-% warning(['Error messages for ', sname, ' have not been written']);
-% warning([sname, ' has not been properly commented']);
+fname='projectpath';
+% error([fname, ' has not been written']);
+% warning([fname, ' has not been verified']);
+% warning([fname, ' has not been validated']);
+% warning(['Error messages for ', fname, ' have not been written']);
+% warning([fname, ' has not been properly commented']);
 
 % -------------------------------------------------------------------------
 % VARIABLE INITIALIZATION
@@ -40,13 +41,15 @@ sname='projectpath';
 % -------------------------------------------------------------------------
 
 % CHANGE DIRECTORY TO PROJECT
-cd ~/Documents/Projects/utils
-
-% ADD FOLDERS AND SUBFOLDERS OF SPECIFIED VERSION
-addpath(genpath('MATLAB'));
+cd(['~/Documents/Projects/', name])
 
 % CHANGE DIRECTORY TO SPECIFIED VERSION DIRECTORY
-cd MATLAB
+cd(ver);                               % cd after addpath will undo addpath
+
+% ADD FOLDERS AND SUBFOLDERS OF SPECIFIED VERSION
+addpath(genpath(['../', ver]));
+
+
 
 % -------------------------------------------------------------------------
 % OUTPUT DATA
@@ -63,3 +66,4 @@ cd MATLAB
 % -------------------------------------------------------------------------
 % END OF SCRIPT
 % -------------------------------------------------------------------------
+end

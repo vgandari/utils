@@ -1,4 +1,5 @@
-utils/data
+/utils/data
 
-Project Data (output only)
-Input data (utils/usr)
+Output Data (/run)
+Log files (/log)
+Input data (/utils/usr/data)
